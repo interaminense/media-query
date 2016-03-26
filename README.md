@@ -42,3 +42,5 @@ Existem dez tipos de media types definidas em Css 2.1, são elas:
 ```css
 @media screen { body: color: red; }
 ```
+
+### Sabendo disso, vamos entender o que são Media Queries
