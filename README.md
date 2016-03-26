@@ -23,12 +23,22 @@ Existem dez tipos de media types definidas em Css 2.1, são elas:
 
 **Abaixo mostra com exemplo os alguns métodos que podem ser usados para especificar as medias types:**
 
-1. Dentro do HTML:
+* Dentro do HTML:
 ```html
 <link rel="stylesheet" href="estilo.css" type="text/css" media="screen" />
 ```
 
-2. @import dentro do CSS:
+* @import dentro do HTML:
+```html
+<style type="text/css" media="screen">@import "estilo.css";</style>
+```
+
+* @import dentro do CSS:
 ```css
 @import url("estilo.css").screen;
+```
+
+* @media dentro do CSS:
+```css
+@media screen { body: color: red; }
 ```
