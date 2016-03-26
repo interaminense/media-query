@@ -23,4 +23,8 @@ Existem dez tipos de media types definidas em Css 2.1, são elas:
 
 **Abaixo mostra com exemplo os alguns métodos que podem ser usados para especificar as medias types:**
 
-1. Dentro do HTML: <link rel="stylesheet" href="estilo.css" type="text/css" **media="screen"** />
+1. Dentro do HTML:
+2. 
+```html
+<link rel="stylesheet" href="estilo.css" type="text/css" media="screen" />
+```
