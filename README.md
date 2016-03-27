@@ -4,7 +4,7 @@ Antes de iniciarmos o aprendizado sobre **Media Queries**, precisamos entender o
 
 O HTML foi criado para ser portável, ou seja, ele deve ser lido e interpretado por qualquer tipo de dispositivo. Cada dispositivo exibe HTML de uma determinada maneira. Logo, a forma com que você formata o layout precisa ser diferente para cada dispositivo. Por exemplo, se você visita um site por um desktop, a experiência será totalmente diferente caso você visite o mesmo site por um dispositivo móvel. São dispositivos diferentes, com formas totalmente diferentes de navegação e uso.
 
-**O que são Media Types?**
+### O que são Media Types?
 
 Existem outras outros cenários que precisamos prever para controlar a formatação do site, como por exemplo, quando o usuário imprimir sua página. Quando alguém imprimi a página de um artigo no site do UOL, Terra ou qualquer site de conteúdo, vários elementos não precisam ser impressos, começando pelo menu, barra lateral, rodapé e etc. O texto poderia ser melhor formatado para que a leitura em papel fosse mais confortável. Essa diferença entre dispositivos é controlada pelas **media types**. Existem dez tipos de media types definidas em CSS, são elas:
 
@@ -35,6 +35,14 @@ Sabendo disso, vamos entender o que são Media Queries.
 
 ### O problema
 
+todo dia surgem novos dispositivos, com diversos tamanhos e hardwares parecidos com os desktops. Com isso surge a necessidade de se usar LAYOUTS e um CSS diferente para cada tipo de telas. Um IPhone não se encaixa na categoria **media type handheld** nem tão pouco na categoria **media type screen** onde a especificação é clara quando diz que é para desktops e computadores.
 
-# O que são Media Queries?
+### A solução: Media Queries
+
+As Media Queries definem condições para que o CSS seja utilizado em cenários específicos. Se essas condições forem aprovadas, ou seja, se o dispositivo se adequar a todas as condições estabelecidas na sua Media Querie, o CSS será aplicado.
+
+*Importando um CSS para dispositivos com largura máxima de 480px:*
+```html
+<link rel="stylesheet" href="estilo.css" media="screen and (max-width: 480px)">
+```
 
