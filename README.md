@@ -41,8 +41,44 @@ todo dia surgem novos dispositivos, com diversos tamanhos e hardwares parecidos 
 
 As Media Queries definem condições para que o CSS seja utilizado em cenários específicos. Se essas condições forem aprovadas, ou seja, se o dispositivo se adequar a todas as condições estabelecidas na sua Media Querie, o CSS será aplicado.
 
-*Importando um CSS para dispositivos com largura máxima de 480px:*
 ```html
 <link rel="stylesheet" href="estilo.css" media="screen and (max-width: 480px)">
 ```
+Acima especificamos que o arquivo **estilo.css**, será aplicado em dispositivos que se enquadram na condição de **screen** (ou seja, que tem uma tela com alta capacidade de cores) e com uma largura máxima de 480px.
 
+Geralmente usamos as Media Queries dentro código CSS, que é bem mais organizado. Você linka seu CSS normalmente no HEAD do seu documento:
+```html
+<link rel="stylesheet" href="estilo.css">
+```
+
+E dentro do código CSS, vamos separar por condições de largura, as telas dos dispositivos, que definem quando cada bloco de CSS será utilizado. Veja o código abaixo:
+
+```css
+/* Código geral, que será herdado por qualquer dispositivos.
+   nesse caso, seria o código usado no desktop, na maioria das   vezes. 
+   Se você já conhecer a ideia do Mobile First, esse primeiro código será destinado para mobiles.
+*/
+a {color: blue;}
+
+@media screen and (min-width: 768px) {
+  a {color: yellow;}
+}
+ 
+/* 
+ Com uma largura mínima de 992 pixels. Monitores por exemplo.
+*/
+@media screen and (min-width: 992px) {
+  a {color: green;}
+}
+ 
+/* 
+ Dispositivos com largura mínima de 1200 pixels. Por exemplo TVs.
+*/
+@media screen and (min-width: 1200px) {
+  a {color: black;}
+}
+```
+
+E assim você vai escrevendo seu CSS e manipulando a formatação do layout de acordo com dispositivo desejado.
+
+### Exemplos utilizando media queries
