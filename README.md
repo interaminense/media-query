@@ -60,6 +60,9 @@ E dentro do código CSS, vamos separar por condições de largura, as telas dos 
 */
 a {color: blue;}
 
+/* 
+ Pra dispositivos que tem uma largura mínima de 768 pixels. Tablets, por exemplo.
+*/
 @media screen and (min-width: 768px) {
   a {color: yellow;}
 }
