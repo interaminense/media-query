@@ -27,12 +27,14 @@ A aplicação é muito simples: basta adicionar a linha comum de **link** para s
 ```
 
 Abaixo a funcionalidade é a mesma, mas o import é feito pelo CSS:
-* @import dentro do CSS:
 ```css
 @import url("estilo.css").screen;
 ```
 
 Sabendo disso, vamos entender o que são Media Queries.
+
+### O problema
+
 
 # O que são Media Queries?
 
