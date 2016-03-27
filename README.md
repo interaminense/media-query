@@ -55,8 +55,7 @@ E dentro do código CSS, vamos separar por condições de largura, as telas dos 
 
 ```css
 /* Código geral, que será herdado por qualquer dispositivos.
-   nesse caso, seria o código usado no desktop, na maioria das   vezes. 
-   Se você já conhecer a ideia do Mobile First, esse primeiro código será destinado para mobiles.
+   nesse caso, seria o código usado no desktop, na maioria das vezes.
 */
 a {color: blue;}
 
