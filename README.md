@@ -84,3 +84,5 @@ a {color: blue;}
 E assim você vai escrevendo seu CSS e manipulando a formatação do layout de acordo com dispositivo desejado.
 
 ### Exemplos utilizando media queries
+
+![alt tag](https://raw.githubusercontent.com/interaminense/media-query/master/demo/img/demo-1.gif)
