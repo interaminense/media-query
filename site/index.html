@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="src/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container" ng-controller="mainCtrl">
+        <div class="col-4" ng-repeat="item in response">
+            <section class="photo">
+                <header>
+                    <img class="img" src="{{item.images.standard_resolution.url}}" alt="">
+                    <img class="img-profile" src="{{item.user.profile_picture}}" alt="" />
+                    <h2 class="username">@{{item.user.username}}</h2>
+                </header>
+                <main>
+                    <span class="text">{{item.caption.text}}</span>
+                </main>
+                <footer>
+                    <span class="tag" ng-repeat="tag in item.tags"><i class="material-icons">local_offer</i> {{tag}}</span>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="src/js/angular.min.js"></script>
+    <script type="text/javascript" src="src/js/script.js"></script>
+</body>
+</html>
