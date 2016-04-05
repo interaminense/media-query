@@ -87,4 +87,4 @@ E assim você vai escrevendo seu CSS e manipulando a formatação do layout de a
 
 [Veja a 1ª demostração aqui](http://interaminense.github.io/media-query/demo/demo-1.html)
 
-![alt tag](https://raw.githubusercontent.com/interaminense/media-query/master/demo/img/demo-1.gif)
+![alt tag](https://raw.githubusercontent.com/interaminense/media-query/gh-pages/demo/img/demo-1.gif)
