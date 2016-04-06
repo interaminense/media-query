@@ -1,5 +1,5 @@
 var app = angular.module('app', []);
-var tagName = 'brasilJs';
+var tagName = 'css3';
 
 app.factory('instagram', ['$http', function($http){
     return {
@@ -13,10 +13,8 @@ app.factory('instagram', ['$http', function($http){
 }]);
 
 app.controller('mainCtrl', ['$scope', 'instagram', function ($scope, instagram){
-
     instagram.fetchPopular(function(data){
         $scope.response = data;
         console.log($scope.response);
     });
-
 }]);

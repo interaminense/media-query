@@ -9,24 +9,54 @@
 <body>
 
     <div class="container" ng-controller="mainCtrl">
-        <div class="col-4" ng-repeat="item in response">
+
+        <header class="header">
+            <nav class="nav-top">
+                <div class="container">
+                    <div class="row">
+                        <h2><i class="material-icons icon-camera">photo_camera</i> APP Responsive using API Instagram</h2>
+                        <form ng-submit="submit()" class="form-input">
+                            <input placeholder="press enter to search" type="text" ng-model="tagName" />
+                            <i class="material-icons icon-search">search</i>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <div class="row">
+            <div class="col-12 top-gap">
+                <span class="tag" ng-repeat="tag in listTag" ng-click="modifyTagName(tag)"><i class="material-icons">local_offer</i> {{tag}}</span>
+            </div>
+        </div>
+
+        <div class="col-4" ng-repeat="item in response.data">
             <section class="photo">
                 <header>
-                    <img class="img" src="{{item.images.standard_resolution.url}}" alt="">
+                    <div class="bg">
+                        <img class="img" src="{{item.images.standard_resolution.url}}" alt="">
+                    </div>
                     <img class="img-profile" src="{{item.user.profile_picture}}" alt="" />
                     <h2 class="username">@{{item.user.username}}</h2>
+                    <div class="favorite">
+                        <i class="material-icons">favorite</i> <span>{{item.likes.count}}</span>
+                    </div>
+                    <div class="comment">
+                        <i class="material-icons">mode_comment</i> <span>{{item.comments.count}}</span>
+                    </div>
                 </header>
                 <main>
-                    <span class="text">{{item.caption.text}}</span>
+                    <div class="text">{{item.caption.text}}</div>
+
                 </main>
                 <footer>
-                    <span class="tag" ng-repeat="tag in item.tags"><i class="material-icons">local_offer</i> {{tag}}</span>
+                    <span ng-click="modifyTagName(tag)" class="tag" ng-repeat="tag in item.tags | limitTo: 5"><i class="material-icons">local_offer</i> {{tag}}</span>
                 </footer>
             </div>
         </div>
     </div>
 
     <script type="text/javascript" src="src/js/angular.min.js"></script>
-    <script type="text/javascript" src="src/js/script.js"></script>
+    <script type="text/javascript" src="src/js/script2.js"></script>
 </body>
 </html>
