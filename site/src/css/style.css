@@ -60,7 +60,41 @@ body {
 .top-gap { margin-top: 20px; }
 .left-gap { margin-left: 20px; }
 .right-gap { margin-right: 20px; }
-.bottom-gap { margin-bottom: 20px; }    
+.bottom-gap { margin-bottom: 20px; }
+
+.no-gap { margin: 0 !important; }
+
+.btn {
+    background: 0 0;
+    border: none;
+    border-radius: 2px;
+    color: #000;
+    position: relative;
+    height: 36px;
+    margin: 0;
+    min-width: 64px;
+    padding: 0 16px;
+    display: inline-block;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    overflow: hidden;
+    will-change: box-shadow;
+    transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    line-height: 36px;
+    vertical-align: middle;
+}
+
+.btn.btn-light {
+    background: #3f51b5;
+    color: #fff;
+}
 
 .container {
     width: 1200px;
@@ -70,6 +104,7 @@ body {
 
 .container .row {
     margin: 0 25px;
+    display: table;
 }
 
 .col-1, .col-2, .col-3, .col-4, .col-5,
@@ -92,6 +127,29 @@ body {
 .col-11 { width: 1100px; }
 .col-12 { width: 1200px; }
 
+.select-tag {
+    color: #03A9F4;
+}
+
+.select-tag.title {
+    text-align: center;
+    padding: 50px 0 0;
+    margin: 60px 0 35px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    border-top: 1px dashed rgba(0, 0, 0, .1);
+    font-size: 80px;
+}
+
+.header .mini {
+    margin-top: 5px;
+    transition: all .3s ease-in-out;
+    margin-right: 30px;
+    float: left;
+    font-size: 22px;
+    font-weight: 900;
+    color: rgba(0, 0, 0, .3);
+}
+
 .header {
     height: 112px;
 }
@@ -103,7 +161,7 @@ body {
     left: 0;
     top: 0;
     background-color: #fff;
-    z-index: 3;
+    z-index: 4;
     box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
     transition: all .3s ease-in-out .2s;
 }
@@ -118,8 +176,18 @@ body {
     transform: translateY(-50px);
 }
 
+.header.active .form-input {
+    transform: translateX(0);
+}
+
+.header.active .mini.active {
+    color: #03A9F4;
+}
+
 .header .form-input {
     position: relative;
+    float: left;
+    min-width: 400px;
 }
 
 .header .form-input .icon-search {
@@ -127,7 +195,7 @@ body {
     font-size: 22px;
     position: absolute;
     left: 0;
-    top: 6px;
+    top: 4px;
     color: rgba(0, 0, 0, .2);
 }
 
@@ -138,7 +206,7 @@ body {
     font-size: 22px;
     font-weight: 700;
     font-family: "Roboto", sans-serif;
-    color: #03a9f4;
+    color: #666;
     margin: 0;
 }
 
@@ -161,6 +229,7 @@ body {
 .photo header {
     position: relative;
     height: 180px;
+    transition: all .3s ease-in-out;
 }
 
 .photo header .bg {
@@ -203,6 +272,10 @@ body {
     left: 20px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
     z-index: 2;
+}
+
+.photo header .img-profile, .photo header .username {
+    transition: all .3s linear;
 }
 
 .photo header .link {
@@ -279,7 +352,7 @@ span.tag {
     color: #fff;
     box-shadow: 2px 2px 1px rgba(0, 0, 0, .2);
     position: relative;
-    transition: all .3s ease-in-out;
+    transition: all .8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 span.tag .material-icons {
@@ -299,6 +372,12 @@ span.tag .material-icons {
     transform: translateY(100%);
 }
 
+.btn.btn-search {
+    width: 300px;
+    margin: 20px auto 40px auto;
+    display: table;
+}
+
 /*---------- on hover ----------*/
 
 .photo:hover header:before {
@@ -310,8 +389,54 @@ span.tag .material-icons {
 }
 
 span.tag:hover {
-    transform: scale(1.2) rotate(-2deg);
+    transform: rotateX(360deg);
     background-color: #03A9F4;
     z-index: 2;
     cursor: pointer;
 }
+
+.photo:hover .bg:hover {
+    height: 360px;
+}
+
+.photo .show-photo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 60px;
+    margin: auto;
+    z-index: 3;
+    width: 100px;
+    border: none;
+    background-color: rgba(0, 0, 0, .3);
+    color: #fff;
+    padding: 8px 0;
+    border-radius: 4px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.photo:hover .show-photo {
+    opacity: 1;
+}
+
+/*show photo*/
+
+.photo.active header { height: 360px; }
+.photo.active header:before { background-color: rgba(0, 0, 0, 0); }
+.photo.active header .img {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.photo.active header .img-profile, .photo.active header .username { opacity: 0; }
+.photo.active .show-photo {
+    transform: translateX(-110px) translateY(-45px);
+    padding: 5px;
+}
+.photo .show-photo:before { content: "show"; }
+.photo.active .show-photo:before { content: "hidden"; }

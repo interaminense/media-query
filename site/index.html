@@ -10,11 +10,14 @@
 
     <div class="container" ng-controller="mainCtrl">
 
+        <!-- <button>orderby likes</button> -->
+
         <header class="header">
             <nav class="nav-top">
                 <div class="container">
                     <div class="row">
                         <h2><i class="material-icons icon-camera">photo_camera</i> APP Responsive using API Instagram</h2>
+                        <span class="select-tag mini">#{{tagSelected}}</span>
                         <form ng-submit="submit()" class="form-input">
                             <input placeholder="press enter to search" type="text" ng-model="tagName" />
                             <i class="material-icons icon-search">search</i>
@@ -24,36 +27,43 @@
             </nav>
         </header>
 
+
         <div class="row">
+
             <div class="col-12 top-gap">
                 <span class="tag" ng-repeat="tag in listTag" ng-click="modifyTagName(tag)"><i class="material-icons">local_offer</i> {{tag}}</span>
             </div>
+
+            <h1 class="select-tag title">#{{tagSelected}}</h1>
+
         </div>
-
-        <div class="col-4" ng-repeat="item in response.data">
-            <section class="photo">
-                <header>
-                    <div class="bg">
-                        <img class="img" src="{{item.images.standard_resolution.url}}" alt="">
-                    </div>
-                    <img class="img-profile" src="{{item.user.profile_picture}}" alt="" />
-                    <h2 class="username">@{{item.user.username}}</h2>
-                    <div class="favorite">
-                        <i class="material-icons">favorite</i> <span>{{item.likes.count}}</span>
-                    </div>
-                    <div class="comment">
-                        <i class="material-icons">mode_comment</i> <span>{{item.comments.count}}</span>
-                    </div>
-                </header>
-                <main>
-                    <div class="text">{{item.caption.text}}</div>
-
-                </main>
-                <footer>
-                    <span ng-click="modifyTagName(tag)" class="tag" ng-repeat="tag in item.tags | limitTo: 5"><i class="material-icons">local_offer</i> {{tag}}</span>
-                </footer>
+        <div class="row no-gap">
+            <div class="col-4" ng-repeat="item in listResponse">
+                <section class="photo">
+                    <button class="show-photo" ng-click="showBigPhoto($event)"></button>
+                    <header>
+                        <div class="bg">
+                            <img class="img" src="{{item.images.standard_resolution.url}}" alt="">
+                        </div>
+                        <img class="img-profile" src="{{item.user.profile_picture}}" alt="" />
+                        <h2 class="username">@{{item.user.username}}</h2>
+                        <div class="favorite">
+                            <i class="material-icons">favorite</i> <span>{{item.likes.count}}</span>
+                        </div>
+                        <div class="comment">
+                            <i class="material-icons">mode_comment</i> <span>{{item.comments.count}}</span>
+                        </div>
+                    </header>
+                    <main>
+                        <div class="text">{{item.caption.text}}</div>
+                    </main>
+                    <footer>
+                        <span ng-click="modifyTagName(tag)" class="tag" ng-repeat="tag in item.tags | limitTo: 5"><i class="material-icons">local_offer</i> {{tag}}</span>
+                    </footer>
+                </section>
             </div>
         </div>
+        <button class="btn btn-light btn-search" ng-click="nextUrl(tagSelected, response.pagination.next_max_tag_id)">show more</button>
     </div>
 
     <script type="text/javascript" src="src/js/angular.min.js"></script>
