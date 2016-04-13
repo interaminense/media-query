@@ -33,4 +33,10 @@
     .row.list {
         display: block;
     }
+    .header .mini {
+        display: none;
+    }
+    .header h2 {
+        font-size: 14px;
+    }
 }
