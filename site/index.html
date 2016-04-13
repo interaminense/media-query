@@ -5,12 +5,11 @@
     <title></title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="src/css/style.css" rel="stylesheet">
+    <link href="src/css/responsive.css" rel="stylesheet">
 </head>
 <body>
 
-    <div class="container" ng-controller="mainCtrl">
-
-        <!-- <button>orderby likes</button> -->
+    <div class="container main" ng-controller="mainCtrl">
 
         <header class="header">
             <nav class="nav-top">
@@ -27,17 +26,14 @@
             </nav>
         </header>
 
-
         <div class="row">
-
             <div class="col-12 top-gap">
                 <span class="tag" ng-repeat="tag in listTag" ng-click="modifyTagName(tag)"><i class="material-icons">local_offer</i> {{tag}}</span>
             </div>
-
             <h1 class="select-tag title">#{{tagSelected}}</h1>
-
         </div>
-        <div class="row no-gap">
+
+        <div class="row">
             <div class="col-4" ng-repeat="item in listResponse">
                 <section class="photo">
                     <button class="show-photo" ng-click="showBigPhoto($event)"></button>
@@ -63,8 +59,23 @@
                 </section>
             </div>
         </div>
+
         <button class="btn btn-light btn-search" ng-click="nextUrl(tagSelected, response.pagination.next_max_tag_id)">show more</button>
+
     </div>
+
+    <footer id="footer">
+        <div class="container left-gap right-gap">
+            <div class="row">
+                <h4>Projeto de Faculdade da disciplina de Engenharia de Projeto</h4>
+                <p>
+                    <b>Colaboradores:</b>
+                    <br>
+                    Adriano Interaminense, João Alberto, Túlio Ericson, Tiago Santana, Edgar Silva
+                </p>
+            </div>
+        </div>
+    </footer>
 
     <script type="text/javascript" src="src/js/angular.min.js"></script>
     <script type="text/javascript" src="src/js/script2.js"></script>

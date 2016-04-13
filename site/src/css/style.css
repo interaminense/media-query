@@ -50,6 +50,9 @@ body {
     font-size: 12px;
     line-height: 20px;
     background-color: #F4F4F4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 ::-webkit-input-placeholder { color: rgba(0, 0, 0, .2); }
@@ -100,6 +103,11 @@ body {
     width: 1200px;
     margin: 0 auto;
     display: table;
+}
+
+.main {
+    flex: 1 0 auto;
+    display: block;
 }
 
 .container .row {
@@ -440,3 +448,13 @@ span.tag:hover {
 }
 .photo .show-photo:before { content: "show"; }
 .photo.active .show-photo:before { content: "hidden"; }
+
+/* footer */
+
+#footer {
+    width: 100%;
+    padding: 15px 0;
+    background-color: #fff;
+    box-shadow: 0 0px 4px rgba(0, 0, 0, .3);
+    display: table;
+}

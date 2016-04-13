@@ -1,0 +1,30 @@
+@media screen and (max-width: 1250px) {
+    .container {
+        width: 100%;
+    }
+    .container .row {
+        width: calc(100% - 50px);
+    }
+
+    .container .row.no-gap {
+        width: 100%;
+    }
+    .col-12 {
+        width: 100%;
+    }
+    .col-4 {
+        width: 33.3%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .col-4 {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .col-4 {
+        width: 100%;
+    }
+}
